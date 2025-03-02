@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sic-Bo (大小) カジノゲーム</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Sic-Bo (大小)</h1>
+        <div class="balance-container">
+            <p>残高: <span id="balance">1000</span> チップ</p>
+        </div>
+        
+        <div class="dice-container">
+            <div class="dice" id="dice1"></div>
+            <div class="dice" id="dice2"></div>
+            <div class="dice" id="dice3"></div>
+        </div>
+        
+        <div class="result-container">
+            <p id="result-text">ゲームを始めましょう！</p>
+            <p id="dice-sum"></p>
+        </div>
+        
+        <div class="betting-container">
+            <div class="bet-amount">
+                <label for="bet">ベット額:</label>
+                <input type="number" id="bet" min="10" max="1000" value="50">
+            </div>
+            
+            <div class="bet-options">
+                <button id="bet-small" class="bet-button">小 (4-10)<br>1倍</button>
+                <button id="bet-big" class="bet-button">大 (11-17)<br>1倍</button>
+                <button id="bet-triple" class="bet-button">トリプル<br>30倍</button>
+            </div>
+            
+            <div class="specific-triples">
+                <button id="triple-1" class="triple-button">トリプル1<br>180倍</button>
+                <button id="triple-2" class="triple-button">トリプル2<br>180倍</button>
+                <button id="triple-3" class="triple-button">トリプル3<br>180倍</button>
+                <button id="triple-4" class="triple-button">トリプル4<br>180倍</button>
+                <button id="triple-5" class="triple-button">トリプル5<br>180倍</button>
+                <button id="triple-6" class="triple-button">トリプル6<br>180倍</button>
+            </div>
+        </div>
+        
+        <button id="roll-button" disabled>サイコロを振る</button>
+    </div>
+    
+    <div class="rules-container">
+        <h2>ゲームルール</h2>
+        <ul>
+            <li><strong>小 (Small):</strong> 3つのサイコロの合計が4～10の場合に勝ち（ただしトリプルの場合は負け）</li>
+            <li><strong>大 (Big):</strong> 3つのサイコロの合計が11～17の場合に勝ち（ただしトリプルの場合は負け）</li>
+            <li><strong>トリプル:</strong> 3つのサイコロが同じ値の場合に勝ち</li>
+            <li><strong>特定のトリプル:</strong> 指定した数字のトリプルの場合に勝ち</li>
+        </ul>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
